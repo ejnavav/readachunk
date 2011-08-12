@@ -1,23 +1,37 @@
 <?php
 /*
     Author: ReadAChunk.com
-    Script: Filehandling
+    Script: Fileuploader
     Version: 1.0
 */
-include('filehandling.php');
+require_once('common.php');
 
-// Where the file is going to be placed 
-$target_path = getuploadpath();
 
-/* Add the original filename to our target path.  
-Result is "uploads/filename.extension" */
+function get_filename(){
+    $idstring = uniqid();
+    return "$idstring.pdf";
+}
 
-$target_path = $target_path.basename( $_FILES['uploadedfile']['name']);
-if(move_uploaded_file($_FILES['uploadedfile']['tmp_name'], $target_path)) {
-    //TODO create a landingpage here.
-    echo "The file ".basename( $_FILES['uploadedfile']['name'])." has been uploaded";
-} else{
-    //TODO do some error handling here
-    echo "There was an error uploading the file, please try again!";
+
+function upload_file($tempfile){
+    // Where the file is going to be placed 
+    $dirname = UPLOADFOLDERPATH;
+    chdir($dirname);
+
+    //Get filename
+    $filename = get_filename();
+
+    //Check if the file exists
+    while(is_file($filename)){
+        $filename = get_filename();
+    }
+
+    /* Add the original filename to our target path.  
+    Result is "uploads/filename.extension" */
+    if(move_uploaded_file($tempfile, $filename)) {
+        return $filename;
+    } else{
+        return FALSE;
+    }
 }
 ?>
