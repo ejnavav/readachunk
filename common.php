@@ -9,5 +9,7 @@ define ("TEMP_PATH", "temp/");
 require_once('fileuploader.php');
 require_once('pdf_chunker.php');
 require_once('mailer.php');
+require_once('db.php');
+require_once('helpers.php');
 
 ?>

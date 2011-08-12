@@ -15,7 +15,6 @@ function get_filename(){
 
 function upload_file($tempfile){
     // Where the file is going to be placed 
-    // $dirname = UPLOADFOLDERPATH;
     //Get filename
 	$filename = get_filename();
 	// $filename =  UPLOADFOLDERPATH . get_filename();
