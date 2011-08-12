@@ -27,5 +27,5 @@ function test_send_mail(){
 	return true;
 }
 
-// echo test_send_mail();
+echo test_send_mail();
 ?>
