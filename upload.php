@@ -1,21 +1,34 @@
 <?php
 /*
-    Author: ReadAChunk.com
-    Script: Fileuploader
-    Version: 1.0
+Author: ReadAChunk.com
+Script: Fileuploader
+Version: 1.0
 */
-require_once('common.php');
-include('fileuploader.php');
 
 //Save the file
+require_once('common.php');
 
 $file_id = upload_file($_FILES['book']['tmp_name']);
 
 if(!$file_id){
-    echo "ERROR: uploading file";
-    return FALSE;
+	echo "ERROR: uploading file";
+	return FALSE;
 }
 
-print_r($_POST);
+$chunker = new pdf_chunker();
+// echo $file_id; exit;
+$chunk = $chunker->get_chunk($file_id, 1, 2);
+
+if(!$chunk){
+	echo "Upps there was a problem uploading your file, please try again.";
+	return false;
+}
+
+$emails = array($_POST['email']);
+$subject = "read a chunk";
+$body = "All togeather for the 1st time";
+$attachment = TEMP_PATH . $chunk;
+send_mail($emails, $subject, $body, $attachment);
+echo("Yei it works");
 
 ?>

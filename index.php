@@ -12,7 +12,7 @@
 		<form action="upload.php" method="POST" enctype="multipart/form-data">
 			<label for="book">This is my book</label><br / >
 			<input type="file" name="book" id="book"><br / >
-			<label for="book">This is my email</label><br / >
+			<label for="email">This is my email</label><br / >
 			<input type="text" name="email"><br / >
 			<input type="submit" value="Go!">
 		</form>

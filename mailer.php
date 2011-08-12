@@ -1,6 +1,6 @@
 <?php
 
-require 'Zend/Mail.php';
+require_once('Zend/Mail.php');
 
 function send_mail($emails, $subject, $body, $attachment){
 	$mail = new Zend_Mail();
@@ -22,10 +22,9 @@ function test_send_mail(){
 	$emails = array("victornavav@gmail.com");
 	$subject = "read a chunk";
 	$body = "The the dam thing now!";
-	$attachment = 'a.pdf';
+	$attachment = 'temp/a.pdf';
 	send_mail($emails, $subject, $body, $attachment);
 	return true;
 }
-
-echo test_send_mail();
+// echo test_send_mail();
 ?>

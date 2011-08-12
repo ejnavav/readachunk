@@ -16,11 +16,8 @@ function get_filename(){
 function upload_file($tempfile){
     // Where the file is going to be placed 
     $dirname = UPLOADFOLDERPATH;
-    chdir($dirname);
-
     //Get filename
-    $filename = get_filename();
-
+    $filename =  $dirname.get_filename();
     //Check if the file exists
     while(is_file($filename)){
         $filename = get_filename();
