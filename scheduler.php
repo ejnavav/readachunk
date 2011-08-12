@@ -2,8 +2,7 @@
 require_once("common.php");
 $chunker = new pdf_chunker();
 $db = db::load();
-foreach ($db["jobs"] as $file_id=>$job){
-
+foreach ($db["jobs"] as $file_id=>$job){	
 	if (needs_chunk($job)){
 		// echo $file_id; exit;
 		$file_id = $job["file_id"];
@@ -24,14 +23,15 @@ foreach ($db["jobs"] as $file_id=>$job){
 		$attachment = TEMP_PATH . $chunk;
 		send_mail($emails, $subject, $body, $attachment);
 		echo("Yei it works");
-		update_job($jobs,$job,$last_page_sent+$pages,time());
+		// update_job($db['jobs'],$job,$last_page_sent+$pages,time());
+		update_job($db, $job,$last_page_sent+$pages,time());
 	}
 }
 	
 function needs_chunk($job){
 	$now = time();
 	$frequency = $job["frequency"];
-	$last_time_sent = isset($job["last_time_sent"])? $job["last_time_sent"]:0;
+	$last_time_sent = isset($job["last_time_sent"])? $job["last_time_sent"] : 0;
 	
 	if ($last_time_sent + $frequency <= $now){
 		return true;
@@ -39,9 +39,12 @@ function needs_chunk($job){
 	return false;
 }
 	
-function update_job($jobs,$job,$last_page_sent,$last_time_sent){
-	$jobs[$job["file_id"]]["last_page_sent"]=$last_page_sent;
-	$jobs[$job["file_id"]]["last_time_sent"]=$last_time_sent;
-	db::save($jobs);
+function update_job($db, $job,$last_page_sent,$last_time_sent){
+	$id = $job["file_id"];
+	$job_in_db = $db['jobs'][$id];
+	$job_in_db["last_page_sent"] = $last_page_sent;
+	$job_in_db["last_time_sent"] = $last_time_sent;
+	$db['jobs'][$id] = $job_in_db;
+	db::save($db);
 }
 ?>

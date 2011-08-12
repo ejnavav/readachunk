@@ -10,11 +10,13 @@ class pdf_chunker{
 
 	function get_chunk($file_name, $page_start, $pages){
 		try{
-			
+			// echo $file_name; exit;
 			$pdf_book = Zend_Pdf::load($file_name);
+			echo "looping\n";
 			// echo $file_name; exit;
 			$pdf_chunk = new Zend_Pdf();
 			for ($i=$page_start-1;$i < $page_start+$pages;$i++){
+
 				if ($i<count($pdf_book->pages)){
 					$page = clone $pdf_book->pages[$i];
 					$pdf_chunk->pages[]=$page;

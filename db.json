@@ -1,10 +1,12 @@
 {
   "jobs": {
-    "4e45a57bac346.pdf": {
-      "email": "readachunk@kjer.info",
-      "pages": "3",
+    "4e45b58dd4c77.pdf": {
+      "email": "victornavav@gmail.com",
+      "pages": "1",
       "frequency": "1",
-      "file_id": "4e45a57bac346.pdf"
+      "file_id": "4e45b58dd4c77.pdf",
+      "last_page_sent": 1,
+      "last_time_sent": 1313191408
     }
   }
 }
