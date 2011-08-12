@@ -11,7 +11,7 @@ function send_mail($emails, $subject, $body, $attachment){
 	}
 		
 	$mail->setBodyText($body);
-	$attachment = $mail->createAttachment(file_get_contents('a.pdf'));
+	$attachment = $mail->createAttachment(file_get_contents($attachment));
 	$attachment->type = 'application/pdf';
 	$attachment->filename = 'achunk.pdf';
 	return $mail->send();
@@ -22,7 +22,7 @@ function test_send_mail(){
 	$emails = array("victornavav@gmail.com");
 	$subject = "read a chunk";
 	$body = "The the dam thing now!";
-	$attachment = file_get_contents('a.pdf');
+	$attachment = 'a.pdf';
 	send_mail($emails, $subject, $body, $attachment);
 	return true;
 }
