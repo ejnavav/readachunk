@@ -37,7 +37,18 @@ require_once('common.php');
 function upload(){
 	$file_info = upload_file($_FILES['book']['tmp_name']);
 
+    //TODO Add magic numer check
+    //TODO Add standard value from incompatible browsers
+    $mimeType = 'application/pdf';
+    if($_FILES['book']['type'] != $mimeType)
+    {
+	    //TODO Errorhandling
+        echo "ERROR: uploading file";
+        return FALSE;
+    }
+    
 	if(!$file_info){
+	    //TODO Errorhandling
 		echo "ERROR: uploading file";
 		return FALSE;
 	}
@@ -45,7 +56,7 @@ function upload(){
 	$_POST['file_id'] = $file_info['filename'];
 	save_job($_POST);
 	print_r(db::load("db.json"));
-	// echo("Yei it works");
+	
 }
 
 function save_job($job){
