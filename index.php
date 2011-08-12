@@ -1,4 +1,3 @@
-<?php phpinfo() ; exit;?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -10,9 +9,9 @@
 		<h1>Read a Chunk</h1>
 	</div>
 	<div>
-		<form action="upload.php" method="post" accept-charset="utf-8">
+		<form action="upload.php" method="POST" enctype="multipart/form-data">
 			<label for="book">This is my book</label><br / >
-			<input type="text" name="book" id="book"><br / >
+			<input type="file" name="book" id="book"><br / >
 			<label for="book">This is my email</label><br / >
 			<input type="text" name="email"><br / >
 			<input type="submit" value="Go!">
