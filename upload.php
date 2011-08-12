@@ -15,20 +15,24 @@ if(!$file_id){
 	return FALSE;
 }
 
-$chunker = new pdf_chunker();
-// echo $file_id; exit;
-$chunk = $chunker->get_chunk($file_id, 1, 2);
-
-if(!$chunk){
-	echo "Upps there was a problem uploading your file, please try again.";
-	return false;
-}
-
+$pages = $_POST["pages"];
+$frequency = $_post["frequency"];
 $emails = array($_POST['email']);
-$subject = "read a chunk";
-$body = "All togeather for the 1st time";
-$attachment = TEMP_PATH . $chunk;
-send_mail($emails, $subject, $body, $attachment);
-echo("Yei it works");
+
+// $chunker = new pdf_chunker();
+//echo $file_id; exit;
+// $chunk = $chunker->get_chunk($file_id, 1, 2);
+
+// if(!$chunk){
+	// echo "Upps there was a problem uploading your file, please try again.";
+	// return false;
+// }
+
+// $emails = array($_POST['email']);
+// $subject = "read a chunk";
+// $body = "All togeather for the 1st time";
+// $attachment = TEMP_PATH . $chunk;
+// send_mail($emails, $subject, $body, $attachment);
+// echo("Yei it works");
 
 ?>
