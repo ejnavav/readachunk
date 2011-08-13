@@ -100,6 +100,12 @@ resize: none;
 overflow: auto;*/
 }
 
+ #quotes li{
+width: 550px;
+text-align:center;
+	margin: 20px auto;
+list-style:none;}
+
 
 
 #container {

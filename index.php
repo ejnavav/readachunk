@@ -6,6 +6,14 @@
 
 	<link rel="stylesheet" href="images/style.css" type="text/css" media="screen" />
 	<link rel="shortcut icon" href="images/favicon.ico" type="image/favicon"/>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://github.com/coryschires/quote-rotator/raw/master/src/jquery.quote_rotator.js" type="text/javascript" charset="utf-8"></script>
+
+ 	<script type="text/javascript" charset="utf-8">
+	        $(document).ready(function() {
+	            $('ul#quotes').quote_rotator();
+	        });
+	    </script>
 
 </head>
 <body>
@@ -13,6 +21,7 @@
 
 		<div id="logo">
 			<img src="images/logo.png" alt="Read a Chunk" border=0 > 
+
 
 		</div>
 
@@ -67,5 +76,23 @@
 <br /><br />
 			<input type="submit"  id="submit" value="Go!">
 		</form>
-	</div>
+		
+			</div>
+			
+ <ul id="quotes">
+<li><blockquote>"I like that i can read a book with my friends and when we catch up for a beer we are all the same page."</blockquote> 
+	<cite>Richie @evolve2k</cite>
+	</li>
+
+<li><blockquote>"As a learning tool, reading a chunk is an effective mechanism for educating young learns"</blockquote> 
+	<cite>Nathan</cite>
+	</li>
+<li>
+	<blockquote>"Read a chunk means reading on my terms"</blockquote>
+	</cite>Amir</cite>
+	</li>
+</ul>
+
+
+ 
 </body>
