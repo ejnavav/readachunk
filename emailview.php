@@ -50,7 +50,7 @@ function get_email_text($record_id){
 	
 	// $texthtmlstart = "<html><head><link rel=\"stylesheet\" href=\"http://www.readachunk.com/images/style.css?version=4.2.0\" type=\"text/css\" media=\"screen\" /></head> <body><div id=\"logo\"><img src=\"http://www.readachunk.com/images/logo.png\" alt=\"Read a Chunk\" border=0 > </div><div id=\"container\">";
 	
-	$texthtmlstart = "<html><body style=\"background:#DFE4EA;\"><div><img src=\"http://www.readachunk.com/images/logo.png\" alt=\"Read a Chunk\" border=0 style=\"margin-bottom:30px\"> </div>";
+	$texthtmlstart = "<html><body style=\" padding:30px; text-align:center; background:#DFE4EA;\"><div><img src=\"http://www.readachunk.com/images/logo.png\" alt=\"Read a Chunk\" border=0 style=\"text-align:center;  margin-bottom:30px\"> </div>";
 		
 
 
