@@ -39,7 +39,7 @@ foreach ($db["jobs"] as $record_id=>$job){
 		send_mail($emails, $subject, $body, $attachment);
 
 		// update_job($db['jobs'],$job,$last_page_sent+$pages,time());
-		update_job($db, $job,$last_page_sent+$pages,time());
+		update_job($db, $record_id, $job,$last_page_sent+$pages,time());
 	}
 }
 	
@@ -54,8 +54,8 @@ function needs_chunk($job){
 	return false;
 }
 	
-function update_job($db, $job,$last_page_sent,$last_time_sent){
-	$id = $job["file_id"];
+function update_job($db, $record_id, $job,$last_page_sent,$last_time_sent){
+	$id = $record_id;
 	$job_in_db = $db['jobs'][$id];
 	$job_in_db["last_page_sent"] = $last_page_sent;
 	$job_in_db["last_time_sent"] = $last_time_sent;
