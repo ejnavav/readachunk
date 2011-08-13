@@ -8,5 +8,6 @@
 	<link rel="icon" href="/images/favicon.ico" type="image/x-icon">
 
 </head>
-<body><div id="logo"><img src="images/logo.png" alt="Read a Chunk" border=0 > </div><div id="container">
+<body><div id="logo">
+	<a href="http://www.readachunk.com/">	<img src="images/logo.png" alt="Read a Chunk" border=0 ></a> </div><div id="container">
 <!-- Header ends -->
