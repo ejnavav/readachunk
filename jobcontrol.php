@@ -24,6 +24,12 @@ require_once("common.php");
 	  
 	  echo "<h1>So you like the book heh? A new chunk will be sent to your email very soon!</h1>";
 	  break;
+	  
+	 case "a": //Accept
+	 $db["jobs"][$record_id]["confirmed"] = "true";
+	 echo "<h1>Done! you'll start to be hit by chunks very shortly</h1>";
+	 break;
+	 
 	default:
 	  
 	}
