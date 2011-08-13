@@ -3,10 +3,8 @@
 require_once('Zend/Mail.php');
 
 function send_mail($emails, $subject, $body, $attachment){
-	
-	echo "pwd: " . getcwd() . "\n\n";
-	
-	echo $attachment;
+	// echo "pwd: " . getcwd() . "\n\n";
+	// echo $attachment;
 	
 	$mail = new Zend_Mail();
 	$mail->setSubject($subject);

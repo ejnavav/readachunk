@@ -17,12 +17,14 @@ function upload(){
 		echo '$file_info error: '; exit;
 		// redirect("upps.php"); 
 	}
-
     //TODO Add magic numer check
     //TODO Add more standard value from incompatible browsers
     $mimeTypePDF = 'application/pdf';
     $mimeTypeGeneric = 'application/x-download';
     $mimeType = $_FILES['book']['type'];
+
+	// FIXME test only
+	// $mimeType = $mimeTypePDF;
     
 	if($mimeType == $mimeTypePDF || $mimeType == $mimeTypeGeneric) {
 		save_job($_POST, $file_id);
