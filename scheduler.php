@@ -15,16 +15,11 @@ foreach ($db["jobs"] as $record_id=>$job){
 		// $chunk = $chunker->get_chunk(UPLOADFOLDERPATH.$file_id, 1+$last_page_sent, $pages);
 
 		$file_path = UPLOADFOLDERPATH.$file_id;
-		$page_from = 1 + $last_page_sent;
+		$page_from = $last_page_sent;
 		$page_to = $page_from + $pages;
-
-		// echo "python pdf_chunker.py $file_path $page_from $pages";
 		
 		$chunk = shell_exec("python pdf_chunker.py $file_path $page_from $pages");
-	
-		
 		$chunk = explode(' ', $chunk);
-		
 		// print_r($chunk);
 		
 		// echo $chunk[0] . "\n";
