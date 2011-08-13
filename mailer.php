@@ -41,6 +41,6 @@ function test_send_mail_no_attachment(){
 	return "ok";
 }
 
-echo test_send_mail_no_attachment();
+// echo test_send_mail_no_attachment();
 // echo test_send_mail();
 ?>
