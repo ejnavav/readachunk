@@ -2,18 +2,33 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>Read A Chunk</title>
+	<title>Read A Chunk. Read books small chunk at a time</title>
 
-	<link rel="stylesheet" href="images/style.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="images/style.css?version=4.2.0" type="text/css" media="screen" />
 	<link rel="shortcut icon" href="images/favicon.ico" type="image/favicon"/>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="https://github.com/coryschires/quote-rotator/raw/master/src/jquery.quote_rotator.js" type="text/javascript" charset="utf-8"></script>
+    <script src="images/jquery.quote_rotator.js" type="text/javascript" charset="utf-8"></script>
+	<script src="images/defunkt-facebox-859adc2/src/facebox.js" type="text/javascript"></script>
 
- 	<script type="text/javascript" charset="utf-8">
-	        $(document).ready(function() {
-	            $('ul#quotes').quote_rotator();
-	        });
-	    </script>
+
+	<link href="/images/defunkt-facebox-859adc2/src/facebox.css" media="screen" rel="stylesheet" type="text/css"/>
+	
+
+
+<script type="text/javascript" charset="utf-8">
+	$(document).ready(function() {
+		$('ul#quotes').quote_rotator();
+
+		$('a[rel*=facebox]').facebox({
+			loadingImage : 'images/defunkt-facebox-859adc2/src/loading.gif',
+			closeImage   : 'images/defunkt-facebox-859adc2/src/closelabel.png'
+		})
+
+// $("input#inputField").autoSuggest();
+	});
+	
+	
+	</script> 
 
 </head>
 <body>
@@ -37,7 +52,8 @@
 
 			<div id="my_email">
 				<label for="email">This is my email</label><br / >
-				<input type="text" name="email"><br / >
+				<input type="text" name="email" id="email"><br / >
+
 			</div>
 
 			<div id="i_want_to_read">
@@ -71,11 +87,19 @@
 					<option value = "9">9</option>
 					<option value = "10">10</option>				
 				</select>
-				minutes
+				days
 			</div>
 <br /><br />
+<div id="loader">
+<img src="images/loading.gif" alt="Loading" border=0 >	
+Loading..	
+</div>
 			<input type="submit"  id="submit" value="Go!">
 		</form>
+		<div id="help">
+
+<a href="#info" rel="facebox"><img src="images/help.png" alt="Help" border=0 ></a>
+		</div>
 		
 			</div>
 			
@@ -91,8 +115,34 @@
 	<blockquote>"Read a chunk means reading on my terms"</blockquote>
 	</cite>Amir</cite>
 	</li>
+	
+	
+	<li>
+		<blockquote>"I like the readachunk idea. It's the promodoro of reading"</blockquote>
+		</cite>Adam Meehan</cite>
+		</li>
+		
+		
 </ul>
 
 
+
+<div id="info">
+<strong>About this project:</strong><br /><hr />
+	
+	This project has made in 2 days for <strong>"Startup Hackathon"</strong> in Melbourne Australia 2011. <br /><hr />
+	With <strong>"Read a Chunk"</strong> you can upload your pdf book and read it 
+	in small chunks.
+	Use comma for multiply emails
+<br /><br />
+Members:<ul>
+<li>	Victor Nava</li>
+<li>	Eduardo Nava</li>
+<li>	Emil  Kjer</li>
+<li>	John Kolovos</li>
+	</ul>
+
+
+ </div>
  
 </body>
