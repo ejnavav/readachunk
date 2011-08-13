@@ -18,7 +18,7 @@ echo "<h1> $user s files:</h1>";
  
 foreach ($db[jobs] as $val) {
 	if ($val[email]=$_REQUEST['u'] && $val[confirmed] != "false") {
-echo "<li><a href=\"uploads/$val[file_id]\">$val[file_id]</a></li>"; 
+echo "<li><a href=\"uploads/$val[book_title]\">$val[file_id]</a></li>"; 
 
 }}
 
