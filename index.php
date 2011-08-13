@@ -11,6 +11,7 @@
 	<div>
 		<form action="upload.php" method="POST" enctype="multipart/form-data">
 			<label for="book">This is my book</label><br / >
+			<input type="text" name="book_title" value = "Enter a Book Title Here"/>
 			<input type="file" name="book" id="book"><br / >
 			<label for="email">This is my email</label><br / >
 			<input type="text" name="email"><br / >
