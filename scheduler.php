@@ -21,8 +21,7 @@ foreach ($db["jobs"] as $record_id=>$job){
 		// echo "python pdf_chunker.py $file_path $page_from $pages";
 		
 		$chunk = shell_exec("python pdf_chunker.py $file_path $page_from $pages");
-	
-		
+
 		$chunk = explode(' ', $chunk);
 		
 		// print_r($chunk);
