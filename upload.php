@@ -61,7 +61,12 @@ function upload(){
 
 function save_job($job){
 	$db = db::load();
-	$db['jobs'][$job['file_id']] = $job;
+	$emails = explode(',',$job['email']);
+	foreach ($emails as $email){
+		$job['email']=$email;
+		$db['jobs'][uniqid()]=$job;
+	}
+	//$db['jobs'][$job['file_id']] = $job;
 	db::save($db);
 }
 

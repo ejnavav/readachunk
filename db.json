@@ -1,12 +1,18 @@
 {
   "jobs": {
-    "4e45b58dd4c77.pdf": {
-      "email": "victornavav@gmail.com",
-      "pages": "1",
-      "frequency": "1",
-      "file_id": "4e45b58dd4c77.pdf",
-      "last_page_sent": 1,
-      "last_time_sent": 1313191408
+    "4e45fb57d51fb": {
+      "book_title": "bookTitlesss",
+      "email": "eduardonavav@gmail.com",
+      "pages": "3",
+      "frequency": "4",
+      "file_id": "4e45fb57be944.pdf"
+    },
+    "4e45fb57d5209": {
+      "book_title": "bookTitlesss",
+      "email": "emil",
+      "pages": "3",
+      "frequency": "4",
+      "file_id": "4e45fb57be944.pdf"
     }
   }
 }
