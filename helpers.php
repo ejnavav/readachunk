@@ -1,5 +1,10 @@
 <?php
 
+function redirect($url){
+	header("Location: $url");
+    exit();
+}
+
 function json_format($json)
 {
     $tab = "  ";

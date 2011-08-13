@@ -62,7 +62,7 @@
 					<option value = "9">9</option>
 					<option value = "10">10</option>				
 				</select>
-				minutes
+				days
 			</div>
 <br /><br />
 			<input type="submit"  id="submit" value="Go!">
