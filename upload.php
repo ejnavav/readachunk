@@ -49,7 +49,7 @@ function save_job($job, $file_id){
 		$job['confirmed'] = "false";
 		$db['jobs'][$record_id]=$job;
 		$body = get_confirm_email($record_id);
-		send_mail($email, $subject, $body, $attachment);
+		send_mail($email, $subject, $body);
 	}
 	db::save($db);
 }

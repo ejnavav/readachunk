@@ -14,10 +14,10 @@ function get_confirm_email($record_id){
 	$frequency = $db['jobs'][$record_id]['frequency'];
 	
     $textbody = "You have been invited to receive chunks of $pages pages every $frequency minutes of $booktitle!<br/>";
-	$testbody .= "Please <a href=$acceptUrl>click here</a> to confirm you are ready to be hit by chunks";
+	$textbody .= "Please <a href=$acceptUrl>click here</a> to confirm you are ready to be hit by chunks";
     $textfooter = "<br><hr> This service is provided by <a href='www.readachunk.com'>www.ReadAchunk.com</a>\n";
 
-    $body = $texthtmlstart . $textheader . $textbody . $textplayer . $textfooter . $texthtmlend;
+    $body = $texthtmlstart . $textheader . $textbody . $textfooter . $texthtmlend;
 }
 function get_email_text($record_id){
     //TODO make the hostname not static
