@@ -6,7 +6,10 @@ include("emailview.php");
 $db = db::load();
 foreach ($db["jobs"] as $record_id=>$job){	
 	// if (needs_chunk($job)){
+	// echo "record_id: $record_id" . ", job: ";
+	// print_r($job);
 	if ($job['confirmed'] == "true" && needs_chunk($job)){
+		// echo "jobconfirmed: ". $job['confirmed'];
 		$file_id = $job["file_id"];
 		$email = $job["email"];
 		$pages = $job["pages"];
