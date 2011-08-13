@@ -1,5 +1,6 @@
 <?php
 require_once ('checkprogress.php');
+require_once('common.php');
 function get_confirm_email($record_id){
 	$db = db::load();
 	$urlbase = "http://www.readachunk.com/jobcontrol.php?";
