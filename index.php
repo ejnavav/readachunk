@@ -42,7 +42,7 @@
 
 		//-- Form submit 
 		$('form').submit(function(){
-			// $('#loader').fadeIn('slow');
+			 $('#loader').fadeIn('slow');
 
 			$('#response').facebox({
 				loadingImage : 'images/defunkt-facebox-859adc2/src/loading.gif',
