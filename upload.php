@@ -57,7 +57,8 @@ function upload(){
 	// TODO check fields are correct
 
 	save_job($_POST, $file_id);
-	print_r(db::load("db.json"));
+	echo "<h1>Thank you everybody</h1>";
+	//print_r(db::load("db.json"));
 	
 }
 
