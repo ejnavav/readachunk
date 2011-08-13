@@ -26,6 +26,9 @@ require_once("common.php");
 	  break;
 	  
 	 case "a": //Accept
+	 $db["jobs"][$record_id]["confirmed"] = "true";
+	 echo "<h1>Done! you'll start to be hit by chunks very shortly</h1>";
+	 break;
 	 
 	default:
 	  
