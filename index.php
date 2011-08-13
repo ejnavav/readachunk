@@ -70,6 +70,26 @@
 
 
 
+
+// --validate emails
+
+// var emails = addresses.split(","); 
+// 			
+// var addresses = '...@foo.com, a...@foo.com, st...@bar.com';
+//   var valid;
+// 
+//   $(emails).each(
+//     (function() {
+//       var re = /^[^\s]+@[^\s]+$/;
+//       return function(i, s) {
+//         valid = re.test(jQuery.trim(s));
+//         return valid;
+//       };
+//     })());
+// 
+//   alert(valid);
+// 
+
 		});
 
 

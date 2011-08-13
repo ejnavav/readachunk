@@ -177,6 +177,7 @@ width:250px;
 margin-top:50px;
 padding:10px;
 
+text-align:center;
 /*background:white;
 -moz-border-radius: 5px;
 -webkit-border-radius: 5px;
@@ -189,7 +190,9 @@ text-align:center;
 */
 
 
-display:none;}
+}
+
+#response{display:none;}
 
 
 

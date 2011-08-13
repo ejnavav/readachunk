@@ -48,13 +48,15 @@ function get_email_text($record_id){
 	}
 	
 	
-    $texthtmlstart = "<html><body>";
-    $texthtmlend = "</body></html>";
+	$texthtmlstart = "<html><head><link rel=\"stylesheet\" href=\"http://www.readachunk.com/images/style.css?version=4.2.0\" type=\"text/css\" media=\"screen\" /></head> <body><div id=\"logo\"><img src=\"http://www.readachunk.com/images/logo.png\" alt=\"Read a Chunk\" border=0 > </div><div id=\"container\">";
+
+
+    $texthtmlend = "</div></body></html>";
     $textheader = "";
     $textbody = "Read it now!\n\n $progress_message";
 	
-    $textplayer = "<br><br> Chunk player $urlpause $urlresume $urlstop $urlnext\n";
-    $textfooter = "<br><hr> This service is provided by <a href='www.readachunk.com'>www.ReadAchunk.com</a>\n";
+    $textplayer = "<br /><br /> Chunk player $urlpause $urlresume $urlstop $urlnext\n";
+    $textfooter = "<br /><hr /> This service is provided by <a href='http://www.readachunk.com/'>www.ReadaChunk.com</a>\n";
 
     $body = $texthtmlstart . $textheader . $textbody . $textplayer . $textfooter . $texthtmlend;
 
