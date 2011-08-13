@@ -1,5 +1,5 @@
 host = ARGV[0] ||= "localhost"
-email = ARGV[1] ||= "email=readachunk@kjer.info"
+email = ARGV[1] ||= "readachunk@kjer.info"
 
 puts "host: #{host}"
 puts "email: #{email}"
