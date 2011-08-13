@@ -1,4 +1,7 @@
 <?php
+
+include("inc_header.php");
+
 require_once("common.php");
 	$record_id = $_REQUEST['record_id'];
 	$action = $_REQUEST['a'];
