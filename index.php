@@ -50,9 +50,7 @@
 			// })
 			
 			jQuery.facebox({ div: '#response' });
-			 // $('#loader').fadeIn('slow');
- 			//for (var i=0; i<=10000000; i++ ){}
-
+			 $('#loader').fadeIn('slow');
 
 		});
 
