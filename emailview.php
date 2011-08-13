@@ -34,9 +34,16 @@ function get_email_text($record_id){
     $urlresume = "<a href='$urlid&a=r'>> Start</a>";
     $urlnext = "<a href='$urlid&a=n'>>> Next Chunk</a>";
 
+
+
+	$db = db::load();
+	$user_email = $db['jobs'][$record_id]['email'];
     $userurluserbase = "http://www.readachunk.com/user.php?u=";
-	$urlemail = $userurluserbase . $record_id['email'];
-    $urluserlink = "<a href='$urlemail' View all your files</a>";
+	$urlemail = $userurluserbase . $user_email;
+    $urluserlink = "<a href='$urlemail'> View all your files</a>";
+
+
+
 
 	$progress = check_progress($record_id);
 	if ($progress<=25){
