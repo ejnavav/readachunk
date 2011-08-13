@@ -33,7 +33,7 @@ function upload(){
 	}
 	else {
 		echo 'mimetype error: ' . $mimeType; exit;
-		// redirect("upps.php");
+		redirect("upps.php");
 	}
 }
 
