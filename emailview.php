@@ -1,5 +1,24 @@
 <?php
 require_once ('checkprogress.php');
+function get_confirm_email($record_id){
+	$db = db::load();
+	$urlbase = "http://www.readachunk.com/jobcontrol.php?";
+    $urlrecord = "record_id=$record_id";
+    $acceptUrl = $urlbase . $urlrecord."&a=a";
+	
+	$texthtmlstart = "<html><body>";
+    $texthtmlend = "</body></html>";
+    $textheader = "";
+	$booktitle = $db['jobs'][$record_id]['book_title'];
+	$pages = $db['jobs'][$record_id]['pages'];
+	$frequency = $db['jobs'][$record_id]['frequency'];
+	
+    $textbody = "You have been invited to receive chunks of $pages pages every $frequency minutes of $booktitle!<br/>";
+	$testbody .= "Please <a href=$acceptUrl>click here</a> to confirm you are ready to be hit by chunks";
+    $textfooter = "<br><hr> This service is provided by <a href='www.readachunk.com'>www.ReadAchunk.com</a>\n";
+
+    $body = $texthtmlstart . $textheader . $textbody . $textplayer . $textfooter . $texthtmlend;
+}
 function get_email_text($record_id){
     //TODO make the hostname not static
     $urlbase = "http://www.readachunk.com/jobcontrol.php?";
