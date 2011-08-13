@@ -18,6 +18,8 @@ function get_confirm_email($record_id){
     $textfooter = "<br><hr> This service is provided by <a href='www.readachunk.com'>www.ReadAchunk.com</a>\n";
 
     $body = $texthtmlstart . $textheader . $textbody . $textfooter . $texthtmlend;
+	
+	return $body;
 }
 function get_email_text($record_id){
     //TODO make the hostname not static
