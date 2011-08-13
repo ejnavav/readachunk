@@ -1,5 +1,6 @@
 .DS_Store
 *.pdf
 *.php~
-db.json
+*.json
+*.pyc
 

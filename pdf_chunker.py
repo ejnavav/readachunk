@@ -40,7 +40,7 @@ def readFile():
         sendError()
 
 def sendError():
-    return ""
+    return "ERROR"
     
 def writeOutput(temppath, output, string=''):
     outputStream = file(temppath, "wb")
