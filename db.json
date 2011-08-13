@@ -1,20 +1,13 @@
 {
   "jobs": {
-    "4e4626643618a": {
-      "book_title": "",
-      "email": "victornavav@gmail.com",
-      "pages": "5",
-      "frequency": "1",
-      "file_id": "4e46266436019.pdf",
-      "last_page_sent": 10,
-      "last_time_sent": 1313220572
-    },
-    "4e4627d0e8574": {
+    "4e4632b12865e": {
       "book_title": "apple boook",
       "email": "victornavav@gmail.com",
-      "pages": "3",
+      "pages": "4",
       "frequency": "1",
-      "file_id": "4e4627d0d5c32.pdf"
+      "file_id": "4e4632b123146.pdf",
+      "last_page_sent": 30,
+      "last_time_sent": 1313223757
     }
   }
 }

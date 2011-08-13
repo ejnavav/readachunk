@@ -21,26 +21,27 @@ foreach ($db["jobs"] as $record_id=>$job){
 		// echo "python pdf_chunker.py $file_path $page_from $pages";
 		
 		$chunk = shell_exec("python pdf_chunker.py $file_path $page_from $pages");
+	
 		
-		
-
 		$chunk = explode(' ', $chunk);
+		
+		// print_r($chunk);
 		
 		// echo $chunk[0] . "\n";
 		
-		if($chunk[0] = ""){
+		if($chunk[0] == "ERROR"){
 			echo "Upps there was a problem uploading your file, please try again.";
 			return false;
 		}
 		
-		$temp_file_path = $chunk[0];
+		$temp_file_path = trim($chunk[0]);
 		
 		$subject = "You have a new chunk to read!";
 		$body = get_email_text($record_id);
 		
 		$emails = array($email);
 		
-		$attachment = TEMP_PATH . $temp_file_path;
+		$attachment = $temp_file_path;
 		
 		send_mail($emails, $subject, $body, $attachment);
 		
