@@ -57,50 +57,49 @@
 
 
 
+			// bind form using ajaxForm
+				$('form').ajaxForm({
+					target: '#response',
 
-		// bind form using ajaxForm
-		$('form').ajaxForm({
-			target: '#response',
+					success: function() {
+						$('#loader').fadeOut('slow');
+						// $('#response').fadeIn('slow');
+						jQuery.facebox({ div: '#response' });
 
-			success: function() {
-				$('#loader').fadeOut('slow');
-				// $('#response').fadeIn('slow');
-				jQuery.facebox({ div: '#response' });
-
-			}
-
-
-
-
-// --validate emails
-
-// var emails = addresses.split(","); 
-// 			
-// var addresses = '...@foo.com, a...@foo.com, st...@bar.com';
-//   var valid;
-// 
-//   $(emails).each(
-//     (function() {
-//       var re = /^[^\s]+@[^\s]+$/;
-//       return function(i, s) {
-//         valid = re.test(jQuery.trim(s));
-//         return valid;
-//       };
-//     })());
-// 
-//   alert(valid);
-// 
-
-		});
+					}
 
 
 
 
-		// $("input#inputField").autoSuggest();
-	});
+		// --validate emails
+
+		// var emails = addresses.split(","); 
+		// 			
+		// var addresses = '...@foo.com, a...@foo.com, st...@bar.com';
+		//   var valid;
+		// 
+		//   $(emails).each(
+		//     (function() {
+		//       var re = /^[^\s]+@[^\s]+$/;
+		//       return function(i, s) {
+		//         valid = re.test(jQuery.trim(s));
+		//         return valid;
+		//       };
+		//     })());
+		// 
+		//   alert(valid);
+		// 
+
+				});
 
 
-	</script> 
+
+
+				// $("input#inputField").autoSuggest();
+			});
+
+
+			</script>
 
 </head>
 <body>
@@ -118,12 +117,18 @@
 
 
 			<div id="my_book">
-				<label for="book">This is my book</label><br / >
+				<label for="book">This is my book:</label><br / >
 				<input type="file" name="book" id="book"><br / >
 			</div>
 
+			<div id="book_title">
+				<label for="book_title">This the book's title:</label><br / >
+				<input type="text" name="book_title" id="book_title"><br / >
+
+			</div>
+			
 			<div id="my_email">
-				<label for="email">This is my email</label><br / >
+				<label for="email">This is my email:</label><br / >
 				<input type="text" name="email" id="email"><br / >
 
 			</div>
