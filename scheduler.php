@@ -1,69 +1,61 @@
 <?php
+
 require_once("common.php");
 include("emailview.php");
 
-// $chunker = new pdf_chunker();
-$db = db::load();
-foreach ($db["jobs"] as $record_id=>$job){	
-	// if (needs_chunk($job)){
-	// echo "record_id: $record_id" . ", job: ";
-	// print_r($job);
-	if ($job['confirmed'] == "true" && needs_chunk($job)){
-		// echo "jobconfirmed: ". $job['confirmed'];
-		$file_id = $job["file_id"];
-		$email = $job["email"];
-		$pages = $job["pages"];
-		$last_page_sent = isset($job["last_page_sent"]) ? $job["last_page_sent"] : 0;
+function schedule(){
+    $db = db::load();
+    $jobs = $db['jobs'];
 
-		// $chunk = $chunker->get_chunk(UPLOADFOLDERPATH.$file_id, 1+$last_page_sent, $pages);
-
-		$file_path = UPLOADFOLDERPATH.$file_id;
-		$page_from = $last_page_sent;
-		$page_to = $page_from + $pages;
-		
-		$chunk = shell_exec("python pdf_chunker.py $file_path $page_from $pages");
-		$chunk = explode(' ', $chunk);
-		// print_r($chunk);
-		
-		// echo $chunk[0] . "\n";
-		
-		if($chunk[0] == "ERROR"){
-			echo "Upps there was a problem uploading your file, please try again.";
-			return false;
-		}
-		
-		$temp_file_path = trim($chunk[0]);
-		
-		$subject = "You have a new chunk to read!";
-		$body = get_email_text($record_id);
-		
-		$emails = array($email);
-		
-		$attachment = $temp_file_path;
-		
-		send_mail($emails, $subject, $body, $attachment);
-		
-		update_job($db, $record_id, $job,$page_to,time());
-	}
+    foreach($jobs as $id => $job){
+        if(do_your_thing($id, $job)){
+            $jobs[$id]['last_page_sent'] += $job['pages'];
+            $jobs[$id]['last_time_sent'] = time();
+        }
+    }
+    $db['jobs'] =  $jobs;
+    db::save($db);
 }
 
-function needs_chunk($job){
-	$now = time();
-	$frequency = $job["frequency"];
-	$last_time_sent = isset($job["last_time_sent"])? $job["last_time_sent"] : 0;
+function do_your_thing($id, $job){
+    if( $job['confirmed'] != "true" ){ return false; }
+    
+    if( !time_to_send($job['last_time_sent'], $job['frequency'])) { return false; }
 
-	if ($last_time_sent + $frequency <= $now){
-		return true;
-	}
-	return false;
+    $file_path = UPLOADFOLDERPATH.$job["file_id"];
+    
+    $chunk = get_chunk($file_path, $job['last_page_sent'], $job['pages']);
+    
+    if(!$chunk){ return false; }
+    
+    if($chunk['done']){ return false; }
+    
+    email($id, $job['email'], $chunk['path']);
+
+    return true;
 }
 
-function update_job($db, $record_id, $job,$last_page_sent,$last_time_sent){
-	$id = $record_id;
-	$job_in_db = $db['jobs'][$id];
-	$job_in_db["last_page_sent"] = $last_page_sent;
-	$job_in_db["last_time_sent"] = $last_time_sent;
-	$db['jobs'][$id] = $job_in_db;
-	db::save($db);
+function email($id, $email, $attachment){
+    $subject = "You have a new chunk to read";
+    $body = get_email_text($id);
+    send_mail(array($email), $subject, $body, $attachment);
 }
-?>
+
+function get_chunk($file_path, $page_from, $pages){
+    $chunk = shell_exec("python pdf_chunker.py $file_path $page_from $pages");
+    if($chunk == "ERROR"){ return false; }
+    $chunk = explode(' ', $chunk);
+    return array("path" => trim($chunk[0]), "done" => isset($chunk[1]));
+}
+
+function time_to_send($last_time_sent, $freq){
+    $unit = 60;
+    if( $last_time_sent + ($freq * $unit) < time() ) {
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+schedule();
