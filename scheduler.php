@@ -1,5 +1,7 @@
 <?php
 require_once("common.php");
+include("emailview.php");
+
 $chunker = new pdf_chunker();
 $db = db::load();
 foreach ($db["jobs"] as $record_id=>$job){	
@@ -16,29 +18,16 @@ foreach ($db["jobs"] as $record_id=>$job){
 			echo "Upps there was a problem uploading your file, please try again.";
 		return false;
 		}
-        //TODO make the hostname not static
-        $urlbase = "http://www.readachunk.com/jobcontrol.php?";
-        $urlrecord = "record_id=$record_id";
-        $urlid = $urlbase . $urlrecord;
-        
-        $urlstop = "<a href='$urlid&a=s'>Stop</a>";
-        $urlpause = "<a href='$urlid&a=p>Pause</a>";
-        $urlresume = "<a href='$urlid&a=r>Start</a>";
-        $urlnext = "<a href='$urlid&a=n>Next Chunk</a>";
-        
-		$emails = array($email);
-		$subject = "You have a new chunk to read!";
 
-        $textheader = "";
-		$textbody = "Read it now!\n\n";
-		$textplayer = "<br><br> Chunk player: $urlpause -- $urlresume -- $urlstop -- $urlnext\n";
-		$textfooter = "<br> This service is provided by <a href='www.readachunk.com'>ReadAChunk.com</a>\n";
-
-		$body = $textheader . $textbody . $textplayer . $textfooter;
+        $subject = "You have a new chunk to read!";
+        $body = get_email_text($record_id);
+        
+	    $emails = array($email);
+		
 		$attachment = TEMP_PATH . $chunk;
+		
 		send_mail($emails, $subject, $body, $attachment);
-
-		// update_job($db['jobs'],$job,$last_page_sent+$pages,time());
+		
 		update_job($db, $record_id, $job,$last_page_sent+$pages,time());
 	}
 }
