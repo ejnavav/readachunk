@@ -27,6 +27,7 @@ function upload(){
 	// $mimeType = $mimeTypePDF;
     
 	if($mimeType == $mimeTypePDF || $mimeType == $mimeTypeGeneric) {
+		$_POST['confirmed'] = "false";
 		save_job($_POST, $file_id);
 		echo "<h3>Yei! your book in now in the cloud!, You will start receiving chunks of it in your inbox very soon!</h3>";
 	}
