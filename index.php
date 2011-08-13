@@ -42,7 +42,7 @@
 
 		//-- Form submit 
 		$('form').submit(function(){
-			 // $('#loader').fadeIn('slow');
+			 $('#loader').fadeIn('slow');
 
 			// $('#response').facebox({
 			// 	loadingImage : 'images/defunkt-facebox-859adc2/src/loading.gif',
@@ -143,12 +143,14 @@
 				days
 			</div>
 			<br /><br />
-			<div id="response"></div>
-
-
-			<div id="loader"><img src="images/loading.gif" alt="Loading" border=0 >	
-				Loading..	
+			<div id="response">
+				<div id="loader"><img src="images/loading.gif" alt="Loading" border=0 >	
+					Loading..	
+				</div>
 			</div>
+
+
+
 			<!-- <input type="submit"  id="submit" value="Go!"> -->
 			<input type="submit"   id="submit_bnt" value="Go!">
 
