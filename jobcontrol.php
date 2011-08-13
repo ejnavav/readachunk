@@ -17,7 +17,7 @@ require_once("common.php");
 	  
 	case "r": //resume
 	  $db["jobs"][$record_id]["paused"] = "false";
-	  echo "<h1>Wellcome back you'll start receiving again soon</h1>";
+	  echo "<h1>Wellcome back you'll start receiving chunky emails again soon!</h1>";
 	  break;
 	 
 	 case "n": //retrieve next chunk
