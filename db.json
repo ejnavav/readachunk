@@ -1,5 +1,24 @@
 {
   "jobs": {
+<<<<<<< HEAD
+    "4e461ede55031": {
+      "book_title": "Enter a Book Title Here",
+      "email": "emil@kjer.info",
+      "pages": "1",
+      "frequency": "1",
+      "file_id": "4e461ede4c172.pdf",
+      "last_page_sent": 3,
+      "last_time_sent": 1313219218
+    },
+    "4e4622b51a6aa": {
+      "book_title": "Enter a Book Title Here",
+      "email": "emil@kjer.info",
+      "pages": "1",
+      "frequency": "1",
+      "file_id": "4e4622b51a549.pdf",
+      "last_page_sent": 1,
+      "last_time_sent": 1313219260
+=======
     "4e461e695996e": {
       "book_title": "Enter a Book Title Here",
       "email": "eduardonavav@gmail.com",
@@ -7,6 +26,7 @@
       "frequency": "1",
       "file_id": "4e461e6956b1b.pdf",
       "paused": "false"
+>>>>>>> 4237bdb41f40ab154f6e81a6f8b06343bd46ec10
     }
   }
 }
