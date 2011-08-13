@@ -7,15 +7,15 @@ require_once("common.php");
 	switch ($action)
 	{
 	case "s": //Stop
-	  unset($db["jobs"][$record_id."pdf"]);
+	  unset($db["jobs"][$record_id]);
 	  print_r($db);
 	  break;
 	case "p": //Pause
-	  $db["jobs"][$record_id."pdf"]["paused"] = 1;
+	  $db["jobs"][$record_id]["paused"] = 1;
 	  break;
 	  
 	case "r": //resume
-	  $db["jobs"][$record_id."pdf"]["paused"] = 0;
+	  $db["jobs"][$record_id]["paused"] = 0;
 	  break;
 	 
 	 case "n": //retrieve next chunk
