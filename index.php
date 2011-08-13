@@ -42,12 +42,14 @@
 
 		//-- Form submit 
 		$('form').submit(function(){
-			 $('#loader').fadeIn('slow');
+			 // $('#loader').fadeIn('slow');
 
-			$('#response').facebox({
-				loadingImage : 'images/defunkt-facebox-859adc2/src/loading.gif',
-				closeImage   : 'images/defunkt-facebox-859adc2/src/closelabel.png'
-			})
+			// $('#response').facebox({
+			// 	loadingImage : 'images/defunkt-facebox-859adc2/src/loading.gif',
+			// 	closeImage   : 'images/defunkt-facebox-859adc2/src/closelabel.png'
+			// })
+			
+			jQuery.facebox({ div: '#response' });
 
  			//for (var i=0; i<=10000000; i++ ){}
 
