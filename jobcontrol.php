@@ -24,6 +24,9 @@ require_once("common.php");
 	  
 	  echo "<h1>So you like the book heh? A new chunk will be sent to your email very soon!</h1>";
 	  break;
+	  
+	 case "a": //Accept
+	 
 	default:
 	  
 	}
