@@ -25,8 +25,8 @@
 		
 		// --Facebox
 		$('a[rel*=facebox]').facebox({
-			loadingImage : 'images/defunkt-facebox-859adc2/src/loading.gif',
-			closeImage   : 'images/defunkt-facebox-859adc2/src/closelabel.png'
+			loadingImage : '/images/defunkt-facebox-859adc2/src/loading.gif',
+			closeImage   : '/images/defunkt-facebox-859adc2/src/closelabel.png'
 		})
 
 
@@ -50,7 +50,7 @@
 			// })
 			
 			jQuery.facebox({ div: '#response' });
-			 $('#loader').fadeIn('slow');
+			 // $('#loader').fadeIn('slow');
  			//for (var i=0; i<=10000000; i++ ){}
 
 
