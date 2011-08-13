@@ -5,7 +5,8 @@ include("emailview.php");
 // $chunker = new pdf_chunker();
 $db = db::load();
 foreach ($db["jobs"] as $record_id=>$job){	
-	if (needs_chunk($job)){
+	// if (needs_chunk($job)){
+	if ($job['confirmed'] == "true" && needs_chunk($job)){
 		// echo $file_id; exit;
 		$file_id = $job["file_id"];
 		$email = $job["email"];
