@@ -12,10 +12,11 @@
 	<script src="https://raw.github.com/malsup/form/master/jquery.form.js" type="text/javascript" charset="utf-8"></script>
 
 	<link rel="stylesheet" href="images/style.css?version=4.2.0" type="text/css" media="screen" />
-	<link rel="shortcut icon" href="images/favicon.ico" type="image/favicon"/>
 	<link href="/images/defunkt-facebox-859adc2/src/facebox.css" media="screen" rel="stylesheet" type="text/css"/>
 
-
+	<link rel="shortcut icon" href="/images//favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+	
 
 	<script type="text/javascript" charset="utf-8">
 	$(document).ready(function() {
