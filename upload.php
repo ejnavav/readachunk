@@ -37,7 +37,7 @@ require_once('common.php');
 function upload(){
     $id = uniqid();
 	$file_id = "$id.pdf";
-	$file_info = upload_file($_FILES['book']['tmp_name'], $id);
+	$file_info = upload_file($_FILES['book']['tmp_name'], $file_id);
 
     //TODO Add magic numer check
     //TODO Add standard value from incompatible browsers
