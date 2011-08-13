@@ -8,3 +8,5 @@ class db {
 		return file_put_contents($file, json_format(json_encode($object)));
 	}
 }
+
+?>
