@@ -5,33 +5,7 @@ Script: Fileuploader
 Version: 1.0
 */
 
-//Save the file
 require_once('common.php');
-
-// function test_upload(){
-// 	$file_info = upload_file($_FILES['book']['tmp_name']);
-// 
-// 	if(!$file_info){
-// 		echo "ERROR: uploading file";
-// 		return FALSE;
-// 	}
-// 
-// 	$chunker = new pdf_chunker();
-// 	// echo $file_id; exit;
-// 	$chunk = $chunker->get_chunk($file_info['filepath'], 1, 2);
-// 
-// 	if(!$chunk){
-// 		echo "Upps there was a problem uploading your file, please try again.";
-// 		return false;
-// 	}
-// 
-// 	$emails = array($_POST['email']);
-// 	$subject = "read a chunk";
-// 	$body = "All togeather for the 1st time";
-// 	$attachment = TEMP_PATH . $chunk;
-// 	send_mail($emails, $subject, $body, $attachment);
-// 	echo("Yei it works");
-// }
 
 
 function upload(){
@@ -40,12 +14,16 @@ function upload(){
 	$file_info = upload_file($_FILES['book']['tmp_name'], $file_id);
 
     //TODO Add magic numer check
-    //TODO Add standard value from incompatible browsers
-    $mimeType = 'application/pdf';
-    if($_FILES['book']['type'] != $mimeType)
+    //TODO Add more standard value from incompatible browsers
+    $mimeTypePDF = 'application/pdf';
+    $mimeTypeGeneric = 'application/x-download';
+    
+    $mimeType = $_FILES['book']['type'];
+    
+    if($mimeType != $mimeTypePDF || $mimeType != $mimeTypeGeneric)
     {
 	    //TODO Errorhandling
-        echo "ERROR: uploading file";
+        echo "ERROR: uploading file. Sorry Not a PDF file.";
         return FALSE;
     }
     
@@ -57,7 +35,8 @@ function upload(){
 	// TODO check fields are correct
 
 	save_job($_POST, $file_id);
-	print_r(db::load("db.json"));
+	echo "<h1>Thank you everybody</h1>";
+	//print_r(db::load("db.json"));
 	
 }
 
