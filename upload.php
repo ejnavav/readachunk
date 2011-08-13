@@ -53,7 +53,7 @@ function upload(){
 		return FALSE;
 	}
 	// TODO check fields are correct
-	$_POST['file_id'] = $file_info['filename'];
+	
 	save_job($_POST);
 	print_r(db::load("db.json"));
 	
