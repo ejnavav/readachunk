@@ -45,11 +45,11 @@
 					<option value = "9">9</option>
 					<option value = "10">10</option>				
 				</select>
-				pages 
+				pages  &nbsp;
 			</div>
 
 			<div id="pages_every">
-				every
+				   every  
 				<select name ="frequency">
 					<option value = "1">1</option>
 					<option value = "2">2</option>
@@ -64,7 +64,7 @@
 				</select>
 				minutes
 			</div>
-
+<br /><br />
 			<input type="submit"  id="submit" value="Go!">
 		</form>
 	</div>
