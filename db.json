@@ -1,13 +1,12 @@
 {
   "jobs": {
-    "4e46122021034": {
+    "4e461e695996e": {
       "book_title": "Enter a Book Title Here",
-      "email": "dacs@sol.dk",
+      "email": "eduardonavav@gmail.com",
       "pages": "1",
       "frequency": "1",
-      "file_id": "4e46122020e22.pdf",
-      "last_page_sent": 1,
-      "last_time_sent": 1313215378
+      "file_id": "4e461e6956b1b.pdf",
+      "paused": "false"
     }
   }
 }
