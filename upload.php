@@ -43,9 +43,10 @@ function save_job($job, $file_id){
 	$subject = "Invitation to receive book Chunks please read!";
 	
 	foreach ($emails as $email){
-		$record_id=uniqid()
+		$record_id=uniqid();
 		$job['email'] = $email;
 		$job['file_id'] = $file_id;
+		$job['confirmed'] = "false";
 		$db['jobs'][$record_id]=$job;
 		$body = get_confirm_email($record_id);
 		send_mail($email, $subject, $body, $attachment);
