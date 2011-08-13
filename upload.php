@@ -12,32 +12,22 @@ function upload(){
     $id = uniqid();
 	$file_id = "$id.pdf";
 	$file_info = upload_file($_FILES['book']['tmp_name'], $file_id);
+	
+	if(!$file_info){ redirect("upps.php"); }
 
     //TODO Add magic numer check
     //TODO Add more standard value from incompatible browsers
     $mimeTypePDF = 'application/pdf';
     $mimeTypeGeneric = 'application/x-download';
-    
     $mimeType = $_FILES['book']['type'];
     
-    if($mimeType != $mimeTypePDF || $mimeType != $mimeTypeGeneric)
-    {
-	    //TODO Errorhandling
-        echo "ERROR: uploading file. Sorry Not a PDF file.";
-        return FALSE;
-    }
-    
-	if(!$file_info){
-	    //TODO Errorhandling
-		echo "ERROR: uploading file";
-		return FALSE;
+	if($mimeType == $mimeTypePDF || $mimeType == $mimeTypeGeneric) {
+		save_job($_POST, $file_id);
+		echo "<h3>Yei! your book in now in the cloud!, You will start receiving chunks of it in your inbox very soon!</h3>";
 	}
-	// TODO check fields are correct
-
-	save_job($_POST, $file_id);
-	echo "<h1>Thank you everybody</h1>";
-	//print_r(db::load("db.json"));
-	
+	else {
+		redirect("upps.php");
+	}
 }
 
 function save_job($job, $file_id){
@@ -48,12 +38,9 @@ function save_job($job, $file_id){
 		$job['file_id'] = $file_id;
 		$db['jobs'][uniqid()]=$job;
 	}
-	//$db['jobs'][$job['file_id']] = $job;
 	db::save($db);
 }
 
-// test_upload();
-// test_upload();
 upload();
 
 ?>
