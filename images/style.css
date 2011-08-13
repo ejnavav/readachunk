@@ -1,0 +1,166 @@
+
+body {
+
+	font: 100% Arial, Helvetica, sans-serif;
+	margin-bottom: 50px;
+	text-shadow: 0px 1px 0px #fff;
+	background: url('bg.jpg') repeat-x;
+	 font-weight: bold; color: #333; font-family: Candara, "Helvetica Neue", Arial, sans-serif;  
+	
+	}
+
+
+
+
+
+a, a:visited {
+	color: #000;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #fff;
+}
+
+a:hover {
+	border-bottom: 1px dotted #fff;
+}
+
+
+
+
+
+#my_book{margin-top:10px;}
+
+#my_book input{
+font-size:20px;
+
+}
+
+
+#my_book input[type="file"]{
+/*height:40px;
+width:700px;*/
+font-size:20px;
+
+}
+
+
+#my_email{margin-top:10px;}
+#my_email input{
+font-size:20px;
+}
+
+
+
+#i_want_to_read{margin-top:10px;float:left;}
+#i_want_to_read select{}
+
+
+
+#pages_every{margin-top:10px;float:left;}
+#pages_every select{}
+
+
+
+
+
+
+#submit {
+	clear:both;
+	margin-top:10px;
+font-size:20px;
+
+/*
+width:200px;
+text-align:center;
+margin-left:200px;
+*/}
+
+
+
+
+#container{
+/*border:1px solid grey;*/
+margin: 0 25%;
+margin-top:30px;
+/*background-color:white;*/
+padding:20px;
+
+
+}
+
+img {border:0px;}
+
+textarea, input {
+/*	padding:5px;
+border: 1px solid #6BB130;
+-moz-border-radius: 5px; 
+border-radius: 5px;
+font-size:14px;
+outline: none;
+resize: none;
+overflow: auto;*/
+}
+
+ #quotes li{
+width: 550px;
+text-align:center;
+	margin: 20px auto;
+list-style:none;}
+
+
+
+#container {
+width: 550px;
+	margin: 20px auto;
+
+	background-image:url(trans.png);
+	border: 4px solid #E2E2E2;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	border-radius: 15px;
+	padding: 20px;
+	
+margi-left:20px;
+	
+	
+}
+
+#logo {text-align:center;
+
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	border-radius: 15px;
+	text-align:center;
+	
+
+	}
+
+/*
+input {
+	padding: 5px;
+	font-size: 15px;
+	text-shadow: 0px 1px 0px #fff;
+	outline: none;
+	background: -webkit-gradient(linear, left top, left bottom, from(#bcbcbe), to(#ffffff));
+	background: -moz-linear-gradient(top,  #bcbcbe,  #ffffff);
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	border: 1px solid #717171;
+	-webkit-box-shadow: 1px 1px 0px #efefef;
+	-moz-box-shadow: 1px 1px 0px #efefef;
+	box-shadow:  1px 1px 0px #efefef;
+}
+
+
+input:focus {
+	-webkit-box-shadow: 0px 0px 5px #6BB130;
+	-moz-box-shadow: 0px 0px 5px #6BB130;
+	box-shadow: 0px 0px 5px #6BB130;
+}
+
+*/
+
+
+
+
+ body{ background-image: url(bg.jpg); padding-top: 30px; -webkit-text-size-adjust:none; font-family: Helvetica, Arial, sans-serif; }

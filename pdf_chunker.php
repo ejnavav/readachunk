@@ -12,7 +12,7 @@ class pdf_chunker{
 		try{
 			// echo $file_name; exit;
 			$pdf_book = Zend_Pdf::load($file_name);
-			echo "looping\n";
+			
 			// echo $file_name; exit;
 			$pdf_chunk = new Zend_Pdf();
 			for ($i=$page_start-1;$i < $page_start+$pages;$i++){
@@ -27,7 +27,8 @@ class pdf_chunker{
 			return $chunk_name;
 		}
 		catch (Exception $e){
-			echo $e->getMessage();
+			//echo $e->getMessage();
+			echo "<h2>Oops something went bananas! sorry try again</h2>";
 			return false;
 		}
 	}

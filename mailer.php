@@ -3,6 +3,11 @@
 require_once('Zend/Mail.php');
 
 function send_mail($emails, $subject, $body, $attachment){
+	
+	echo "pwd: " . getcwd() . "\n\n";
+	
+	echo $attachment;
+	
 	$mail = new Zend_Mail();
 	$mail->setSubject($subject);
 	
@@ -10,7 +15,8 @@ function send_mail($emails, $subject, $body, $attachment){
 		$mail->addTo($email);
 	}
 		
-	$mail->setBodyText($body);
+	$mail->setBodyHtml($body);
+	
 	$attachment = $mail->createAttachment(file_get_contents($attachment));
 	$attachment->type = 'application/pdf';
 	$attachment->filename = 'achunk.pdf';
