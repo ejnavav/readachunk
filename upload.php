@@ -35,7 +35,9 @@ require_once('common.php');
 
 
 function upload(){
-	$file_info = upload_file($_FILES['book']['tmp_name']);
+    $id = uniqid();
+	$file_id = "$id.pdf";
+	$file_info = upload_file($_FILES['book']['tmp_name'], $file_id);
 
     //TODO Add magic numer check
     //TODO Add standard value from incompatible browsers
@@ -53,15 +55,21 @@ function upload(){
 		return FALSE;
 	}
 	// TODO check fields are correct
-	$_POST['file_id'] = $file_info['filename'];
-	save_job($_POST);
+
+	save_job($_POST, $file_id);
 	print_r(db::load("db.json"));
 	
 }
 
-function save_job($job){
+function save_job($job, $file_id){
 	$db = db::load();
-	$db['jobs'][$job['file_id']] = $job;
+	$emails = explode(',',$job['email']);
+	foreach ($emails as $email){
+		$job['email'] = $email;
+		$job['file_id'] = $file_id;
+		$db['jobs'][uniqid()]=$job;
+	}
+	//$db['jobs'][$job['file_id']] = $job;
 	db::save($db);
 }
 

@@ -7,16 +7,12 @@
 require_once('common.php');
 
 
-function get_filename(){
-    $idstring = uniqid();
-    return "$idstring.pdf";
-}
 
 
-function upload_file($tempfile){
+function upload_file($tempfile, $filename){
     // Where the file is going to be placed 
     //Get filename
-	$filename = get_filename();
+	$filename = $filename;
 	// $filename =  UPLOADFOLDERPATH . get_filename();
 	$filepath = UPLOADFOLDERPATH . $filename;
     //Check if the file exists
