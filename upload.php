@@ -14,7 +14,7 @@ function upload(){
 	$file_info = upload_file($_FILES['book']['tmp_name'], $file_id);
 	
 	if(!$file_info){ 
-		echo "if(!$file_info){ = " . !$file_info;
+		echo '$file_info error: '; exit;
 		// redirect("upps.php"); 
 	}
 
@@ -29,8 +29,8 @@ function upload(){
 		echo "<h3>Yei! your book in now in the cloud!, You will start receiving chunks of it in your inbox very soon!</h3>";
 	}
 	else {
-		echo '$mimeType == $mimeTypePDF || $mimeType == $mimeTypeGeneric : ' . $mimeType;
-		redirect("upps.php");
+		echo 'mimetype error: ' . $mimeType; exit;
+		// redirect("upps.php");
 	}
 }
 
