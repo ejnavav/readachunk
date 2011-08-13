@@ -28,10 +28,16 @@ function get_email_text($record_id){
     $urlrecord = "record_id=$record_id";
     $urlid = $urlbase . $urlrecord;
 
+
     $urlstop = "<a href='$urlid&a=s'># Stop</a>";
     $urlpause = "<a href='$urlid&a=p'>|| Pause</a>";
     $urlresume = "<a href='$urlid&a=r'>> Start</a>";
     $urlnext = "<a href='$urlid&a=n'>>> Next Chunk</a>";
+
+    $userurluserbase = "http://www.readachunk.com/user.php?u=";
+	$urlemail = $userurluserbase . $record_id['email'];
+    $urluserlink = "<a href='$urlemail' View all your files</a>";
+
 	$progress = check_progress($record_id);
 	if ($progress<=25){
 		$progress_message = "Ok It's a good start your current progress is $progress%";
@@ -58,7 +64,7 @@ function get_email_text($record_id){
     $textheader = "";
     $textbody = "<h1>Read it now!\n\n $progress_message </h1>";
 	
-    $textplayer = "<br /><br /> Chunk player $urlpause $urlresume $urlstop $urlnext\n";
+    $textplayer = "<br /><br /> Chunk player $urlpause $urlresume $urlstop $urlnext\n View all your files: $urluserlink ";
     $textfooter = "<br /><hr /> This service is provided by <a href='http://www.readachunk.com/'>www.ReadaChunk.com</a>\n";
 
     $body = $texthtmlstart . $textheader . $textbody . $textplayer . $textfooter . $texthtmlend;
