@@ -4,7 +4,6 @@ Author: ReadAChunk.com
 Script: Fileuploader
 Version: 1.0
 */
-
 require_once('common.php');
 include("emailview.php");
 

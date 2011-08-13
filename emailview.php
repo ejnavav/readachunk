@@ -28,10 +28,23 @@ function get_email_text($record_id){
     $urlrecord = "record_id=$record_id";
     $urlid = $urlbase . $urlrecord;
 
+
     $urlstop = "<a href='$urlid&a=s'># Stop</a>";
     $urlpause = "<a href='$urlid&a=p'>|| Pause</a>";
     $urlresume = "<a href='$urlid&a=r'>> Start</a>";
     $urlnext = "<a href='$urlid&a=n'>>> Next Chunk</a>";
+
+
+
+	$db = db::load();
+	$user_email = $db['jobs'][$record_id]['email'];
+    $userurluserbase = "http://www.readachunk.com/user.php?u=";
+	$urlemail = $userurluserbase . $user_email;
+    $urluserlink = "<a href='$urlemail'> View all your files</a>";
+
+
+
+
 	$progress = check_progress($record_id);
 	if ($progress<=25){
 		$progress_message = "Ok It's a good start your current progress is $progress%";
@@ -48,13 +61,18 @@ function get_email_text($record_id){
 	}
 	
 	
-    $texthtmlstart = "<html><body>";
-    $texthtmlend = "</body></html>";
-    $textheader = "";
-    $textbody = "Read it now!\n\n $progress_message";
+	// $texthtmlstart = "<html><head><link rel=\"stylesheet\" href=\"http://www.readachunk.com/images/style.css?version=4.2.0\" type=\"text/css\" media=\"screen\" /></head> <body><div id=\"logo\"><img src=\"http://www.readachunk.com/images/logo.png\" alt=\"Read a Chunk\" border=0 > </div><div id=\"container\">";
 	
-    $textplayer = "<br><br> Chunk player $urlpause $urlresume $urlstop $urlnext\n";
-    $textfooter = "<br><hr> This service is provided by <a href='www.readachunk.com'>www.ReadAchunk.com</a>\n";
+	$texthtmlstart = "<html><body style=\" padding:30px; text-align:center; background:#DFE4EA;\"><div><img src=\"http://www.readachunk.com/images/logo.png\" alt=\"Read a Chunk\" border=0 style=\"text-align:center;  margin-bottom:30px\"> </div>";
+		
+
+
+    $texthtmlend = "</div></body></html>";
+    $textheader = "";
+    $textbody = "<h1>Read it now!\n\n $progress_message </h1>";
+	
+    $textplayer = "<br /><br /> Chunk player $urlpause $urlresume $urlstop $urlnext\n View all your files: $urluserlink ";
+    $textfooter = "<br /><hr /> This service is provided by <a href='http://www.readachunk.com/'>www.ReadaChunk.com</a>\n";
 
     $body = $texthtmlstart . $textheader . $textbody . $textplayer . $textfooter . $texthtmlend;
 
