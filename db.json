@@ -1,12 +1,13 @@
 {
   "jobs": {
-    "4e45b58dd4c77.pdf": {
+    "4e45d61bcf3d0.pdf": {
       "email": "victornavav@gmail.com",
-      "pages": "1",
+      "pages": "4",
       "frequency": "1",
-      "file_id": "4e45b58dd4c77.pdf",
-      "last_page_sent": 1,
-      "last_time_sent": 1313191408
+      "file_id": "4e45d61bcf3d0.pdf",
+      "book_title": "apple book",
+      "last_page_sent": 4,
+      "last_time_sent": 1313199892
     }
   }
 }
