@@ -4,45 +4,96 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>Read A Chunk. Read books small chunk at a time</title>
 
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="images/jquery.quote_rotator.js" type="text/javascript" charset="utf-8"></script>
+	<script src="images/defunkt-facebox-859adc2/src/facebox.js" type="text/javascript"></script>
+	<script src="images/jquery.tweet.js" type="text/javascript" charset="utf-8"></script>
+	<script src="https://raw.github.com/malsup/form/master/jquery.form.js" type="text/javascript" charset="utf-8"></script>
+
 	<link rel="stylesheet" href="images/style.css?version=4.2.0" type="text/css" media="screen" />
 	<link rel="shortcut icon" href="images/favicon.ico" type="image/favicon"/>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="images/jquery.quote_rotator.js" type="text/javascript" charset="utf-8"></script>
-	<script src="images/defunkt-facebox-859adc2/src/facebox.js" type="text/javascript"></script>
-
-
 	<link href="/images/defunkt-facebox-859adc2/src/facebox.css" media="screen" rel="stylesheet" type="text/css"/>
-	
 
 
-<script type="text/javascript" charset="utf-8">
+
+	<script type="text/javascript" charset="utf-8">
 	$(document).ready(function() {
-		$('ul#quotes').quote_rotator();
 
+		// --Display quotes
+		$('ul#quotes').quote_rotator();
+		
+		// --Facebox
 		$('a[rel*=facebox]').facebox({
 			loadingImage : 'images/defunkt-facebox-859adc2/src/loading.gif',
 			closeImage   : 'images/defunkt-facebox-859adc2/src/closelabel.png'
 		})
 
-// $("input#inputField").autoSuggest();
+
+		// --Tweets response
+
+		$("#tweets").tweet({
+			avatar_size: 32,
+			count: 4,
+			query: "readachunk.com",
+			loading_text: "searching twitter..."
+		});
+
+
+		//-- Form submit 
+		$('form').submit(function(){
+			// $('#loader').fadeIn('slow');
+
+			$('#response').facebox({
+				loadingImage : 'images/defunkt-facebox-859adc2/src/loading.gif',
+				closeImage   : 'images/defunkt-facebox-859adc2/src/closelabel.png'
+			})
+
+ 			//for (var i=0; i<=10000000; i++ ){}
+
+
+		});
+
+
+
+
+		// bind form using ajaxForm
+		$('form').ajaxForm({
+			target: '#response',
+
+			success: function() {
+				$('#loader').fadeOut('slow');
+				// $('#response').fadeIn('slow');
+				jQuery.facebox({ div: '#response' });
+
+			}
+
+
+
+		});
+
+
+
+
+		// $("input#inputField").autoSuggest();
 	});
-	
-	
+
+
 	</script> 
 
 </head>
 <body>
 
 
-		<div id="logo">
-			<img src="images/logo.png" alt="Read a Chunk" border=0 > 
+	<div id="logo">
+		<img src="images/logo.png" alt="Read a Chunk" border=0 > 
 
 
-		</div>
+	</div>
 
 
 	<div id="container">
-				<form action="upload.php" method="POST" enctype="multipart/form-data">
+		<form action="upload.php" method="POST" enctype="multipart/form-data">
 
 
 			<div id="my_book">
@@ -74,7 +125,7 @@
 			</div>
 
 			<div id="pages_every">
-				   every  
+				every  
 				<select name ="frequency">
 					<option value = "1">1</option>
 					<option value = "2">2</option>
@@ -89,60 +140,77 @@
 				</select>
 				days
 			</div>
-<br /><br />
-<div id="loader">
-<img src="images/loading.gif" alt="Loading" border=0 >	
-Loading..	
-</div>
-			<input type="submit"  id="submit" value="Go!">
+			<br /><br />
+			<div id="response"></div>
+
+
+			<div id="loader"><img src="images/loading.gif" alt="Loading" border=0 >	
+				Loading..	
+			</div>
+			<!-- <input type="submit"  id="submit" value="Go!"> -->
+			<input type="submit"   id="submit_bnt" value="Go!">
+
 		</form>
 		<div id="help">
 
-<a href="#info" rel="facebox"><img src="images/help.png" alt="Help" border=0 ></a>
+			<a href="#info" rel="facebox"><img src="images/help.png" alt="Help" border=0 ></a>
 		</div>
-		
-			</div>
-			
- <ul id="quotes">
-<li><blockquote>"I like that i can read a book with my friends and when we catch up for a beer we are all the same page."</blockquote> 
-	<cite>Richie @evolve2k</cite>
+
+	</div>
+
+	<ul id="quotes">
+		<li><blockquote>"I like that i can read a book with my friends and when we catch up for a beer we are all the same page."</blockquote> 
+			<cite>Richie @evolve2k</cite>
+		</li>
+
+		<li><blockquote>"As a learning tool, reading a chunk is an effective mechanism for educating young learns"</blockquote> 
+			<cite>Nathan</cite>
+		</li>
+		<li>
+			<blockquote>"Read a chunk means reading on my terms"</blockquote>
+		</cite>Amir</cite>
 	</li>
 
-<li><blockquote>"As a learning tool, reading a chunk is an effective mechanism for educating young learns"</blockquote> 
-	<cite>Nathan</cite>
-	</li>
-<li>
-	<blockquote>"Read a chunk means reading on my terms"</blockquote>
-	</cite>Amir</cite>
-	</li>
-	
-	
+
 	<li>
 		<blockquote>"I like the readachunk idea. It's the promodoro of reading"</blockquote>
-		</cite>Adam Meehan</cite>
-		</li>
-		
-		
+	</cite>Adam Meehan</cite>
+</li>
+
+
 </ul>
 
 
 
+
+
+
+
 <div id="info">
-<strong>About this project:</strong><br /><hr />
-	
+	<strong>About this project:</strong><br /><hr />
+
 	This project has made in 2 days for <strong>"Startup Hackathon"</strong> in Melbourne Australia 2011. <br /><hr />
 	With <strong>"Read a Chunk"</strong> you can upload your pdf book and read it 
 	in small chunks.
 	Use comma for multiply emails
-<br /><br />
-Members:<ul>
-<li>	Victor Nava</li>
-<li>	Eduardo Nava</li>
-<li>	Emil  Kjer</li>
-<li>	John Kolovos</li>
+	<br /><br />
+	Members:<ul>
+		<li>	Victor Nava</li>
+		<li>	Eduardo Nava</li>
+		<li>	Emil  Kjer</li>
+		<li>	John Kolovos</li>
 	</ul>
 
 
- </div>
- 
+</div>
+
+<!-- <div id="tweets">
+</div> -->
+
+
+
+
+
+
+<div id="footer"></div>
 </body>

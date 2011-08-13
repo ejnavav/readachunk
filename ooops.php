@@ -6,13 +6,16 @@
 		<style type="text/css">
 		
 				
-		body, html {
-			background: #eeeeee;
+		body, html {}
 			height: 100%;			
 			padding: 0;
 			margin: 0;
 			font: 14px/18px Helvetica, sans-serif;
 			vertical-align: middle;
+			
+			background:#DFE4EA url('images/body_bg.png') ;
+			background-repeat:no-repeat;
+			background-position:center top;
 		}
 
 		#centerer-container {
