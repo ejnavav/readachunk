@@ -22,7 +22,7 @@ function do_your_thing($id, $job){
     
     if( !time_to_send($job['last_time_sent'], $job['frequency'])) { return false; }
 	
-	$paused = isset(job['paused'])?job['paused']:"false";
+	$paused = isset($job['paused'])?$job['paused']:"false";
 	if ($paused = "true") {return false;}
 	
     $file_path = UPLOADFOLDERPATH.$job["file_id"];
