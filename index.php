@@ -124,7 +124,7 @@
 
 
 			<div id="my_book">
-				<label for="book">This is my book:</label><br / >
+				<label for="book">This is my PDF</label><br / >
 				<input type="file" name="book" id="book"><br / >
 			</div>
 
@@ -176,7 +176,7 @@
 			<br /><br />
 			<div id="response">
 				<div id="loader"><img src="images/loading.gif" alt="Loading" border=0 >	
-					Loading..	
+					Uploading the file...	
 				</div>
 			</div>
 
