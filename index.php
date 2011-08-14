@@ -103,6 +103,13 @@
 
 </head>
 <body>
+    <!--start contactable -->
+    <div id="contactable"><!-- contactable html placeholder --></div>
+    <script type="text/javascript" src="contact/jquery.validate.pack.js"></script>
+    <script type="text/javascript" src="contact/jquery.contactable.js"></script>
+    <link rel="stylesheet" href="contact/contactable.css" type="text/css" />
+    <script>$(function(){$('#contactable').contactable({subject: 'feedback URL:'+location.href});});</script>
+    <!--end contactable -->
 
 
 	<div id="logo">
