@@ -3,7 +3,7 @@ require_once ('checkprogress.php');
 require_once('common.php');
 function get_confirm_email($record_id){
 	$db = db::load();
-	$urlbase = "http://www.readachunk.com/jobcontrol.php?";
+	$urlbase = HOST."/jobcontrol.php?";
     $urlrecord = "record_id=$record_id";
     $acceptUrl = $urlbase . $urlrecord."&a=a";
 	
@@ -24,21 +24,21 @@ function get_confirm_email($record_id){
 }
 function get_email_text($record_id){
     //TODO make the hostname not static
-    $urlbase = "http://www.readachunk.com/jobcontrol.php?";
+    $urlbase = HOST."/jobcontrol.php?";
     $urlrecord = "record_id=$record_id";
     $urlid = $urlbase . $urlrecord;
 
 
-    $urlstop = "<a href='$urlid&a=s'># Stop</a>";
-    $urlpause = "<a href='$urlid&a=p'>|| Pause</a>";
-    $urlresume = "<a href='$urlid&a=r'>> Start</a>";
-    $urlnext = "<a href='$urlid&a=n'>>> Next Chunk</a>";
+    $urlstop = "<a href='$urlid&a=s'>Stop</a>";
+    $urlpause = "<a href='$urlid&a=p'>Pause</a>";
+    $urlresume = "<a href='$urlid&a=r'Start</a>";
+    $urlnext = "<a href='$urlid&a=n'Next Chunk</a>";
 
 
 
 	$db = db::load();
 	$user_email = $db['jobs'][$record_id]['email'];
-    $userurluserbase = "http://www.readachunk.com/user.php?u=";
+    $userurluserbase = HOST."/user.php?u=";
 	$urlemail = $userurluserbase . $user_email;
     $urluserlink = "<a href='$urlemail'> View all your files</a>";
 
@@ -55,7 +55,7 @@ function get_email_text($record_id){
 	}elseif ($progress>55 && $progress<=90){
 		$progress_message = "Keep it going mate! U've left the half mark ages ago. currently $progress%";
 	}elseif ($progress>90 && $progress < 100){
-		$progress_message = "That's finish line is just around the corner only". 100-$progress . "% to go" ;
+		$progress_message = "That finish line is just around the corner only". (100 - $progress) . "% to go" ;
 	}else {
 		$progress_message = "Well done boy u've eaten that book";
 	}
