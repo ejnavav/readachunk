@@ -6,6 +6,8 @@
 define ("UPLOADFOLDERPATH", "uploads/");
 define ("TEMP_PATH", "temp/");
 
+define("HOST",$_SERVER['SERVERNAME'];
+
 require_once('fileuploader.php');
 require_once('pdf_chunker.php');
 require_once('mailer.php');
