@@ -160,7 +160,7 @@
 									<option value = "50">50</option>
 									<option value = "60">60</option>				
 								</select>
-								<del>days</del>&nbsp;minutes
+								<del>&nbsp;days&nbsp;</del>&nbsp;minutes
 							</div>
 							<br /><br />
 							<div id="response">
