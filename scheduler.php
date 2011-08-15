@@ -19,6 +19,7 @@ function schedule(){
 		db::save($db);
 	} catch (Exception $e) {
 		$message = "ERROR in readachunk.com\n\n".$e->__toString();
+		echo $message;
 		send_mail(array(ADMIN_EMAIL), "ERROR in readachunk.com", $message);
 	}
 	echo "DONE";

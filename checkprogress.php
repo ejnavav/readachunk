@@ -16,7 +16,7 @@ function check_progress($record_id){
 		return $progress;
 	} catch (Exception $e) {
 		// echo($e);
-		$message = 'ERROR in readachunk.com\n\n'.$e->toString();
+		$message = "ERROR in readachunk.com\n\n".$e->__toString();
 		send_mail(array(ADMIN_EMAIL), "ERROR in readachunk.com", $message);
 	}
 }
