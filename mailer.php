@@ -5,22 +5,27 @@ require_once('Zend/Mail.php');
 function send_mail($emails, $subject, $body, $attachment=false){
 	// echo "pwd: " . getcwd() . "\n\n";
 	// echo $attachment;
-	
-	$mail = new Zend_Mail();
-	$mail->setSubject($subject);
-	
-	foreach($emails as $email){
-		$mail->addTo($email);
+	try {
+		$mail = new Zend_Mail();
+		$mail->setSubject($subject);
+
+		foreach($emails as $email){
+			$mail->addTo($email);
+		}
+
+		$mail->setBodyHtml($body);
+
+		if($attachment){
+			$attachment = $mail->createAttachment(file_get_contents($attachment));
+			$attachment->type = 'application/pdf';
+			$attachment->filename = 'achunk.pdf';	
+		}
+		return $mail->send();
+	} catch (Exception $e) {
+		$message = 'ERROR in readachunk.com\n\n'.$e->toString();
+		send_mail(array(ADMIN_EMAIL), "ERROR in readachunk.com", $message);
 	}
-		
-	$mail->setBodyHtml($body);
 	
-	if($attachment){
-		$attachment = $mail->createAttachment(file_get_contents($attachment));
-		$attachment->type = 'application/pdf';
-		$attachment->filename = 'achunk.pdf';	
-	}
-	return $mail->send();
 }
 
 function test_send_mail(){
