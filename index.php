@@ -146,16 +146,9 @@
 							<div id="i_want_to_read">
 								I want to read&nbsp; 
 								<select name = "pages">
-									<option value = "1">1</option>
-									<option value = "2">2</option>
-									<option value = "3">3</option>
-									<option value = "4">4</option>
-									<option value = "5">5</option>
-									<option value = "6">6</option>
-									<option value = "7">7</option>
-									<option value = "8">8</option>
-									<option value = "9">9</option>
-									<option value = "10">10</option>				
+									<?php for ($i=1; $i <= 10; $i++) : ?>
+									<option value ="<?php echo "$i" ?>"><?php echo "$i" ?></option>
+									<?php endfor ?>		
 								</select>
 								&nbsp;pages&nbsp;
 							</div>
@@ -163,14 +156,11 @@
 							<div id="pages_every">
 								every  
 								<select name ="frequency">
-									<option value = "10">10</option>
-									<option value = "20">20</option>
-									<option value = "30">30</option>
-									<option value = "40">40</option>
-									<option value = "50">50</option>
-									<option value = "60">60</option>				
+									<?php for ($i=1; $i <= 10; $i++) : ?>
+									<option value ="<?php echo "$i" ?>"><?php echo "$i" ?></option>
+									<?php endfor ?>
 								</select>
-								<del>&nbsp;days&nbsp;</del>&nbsp;minutes <br /> <font size="2">Pssst... tomorrow it will be days (:</font>
+								&nbsp;days&nbsp;<br />
 							</div>
 							<br /><br />
 							<div id="response">
