@@ -9,7 +9,7 @@ puts "email: #{email}"
 `rm ../db.json`
 `touch ../db.json`
 
-puts `curl -F "book=@20-pages.pdf;type=application/pdf" -F "email=#{email}" -F "pages=5" -F "frequency=1" http://#{host}/upload.php`
+puts `curl -F "book=@20-pages.pdf;type=application/pdf" -F "email=#{email}" -F "pages=5" -F "frequency=0.0001" http://#{host}/upload.php`
 
 4.times do |i|
   puts "scheduller: #{i}"
