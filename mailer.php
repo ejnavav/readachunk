@@ -22,7 +22,7 @@ function send_mail($emails, $subject, $body, $attachment=false){
 		}
 		return $mail->send();
 	} catch (Exception $e) {
-		$message = 'ERROR in readachunk.com\n\n'.$e->toString();
+		$message = "ERROR in readachunk.com\n\n".$e->__toString();
 		send_mail(array(ADMIN_EMAIL), "ERROR in readachunk.com", $message);
 	}
 	
