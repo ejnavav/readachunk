@@ -11,6 +11,7 @@
 	position:fixed;
 	*position:absolute;
 	text-indent:-100000px;
+	text-shadow: none;
 	top:102px;
 	*margin-top:10px;
 	width:44px;
@@ -42,8 +43,10 @@
 	width:325px;
 	padding:5px;
 	border:1px solid #dfdfdf;
-	font-family: georgia;
+	font-family: Helvetica;
 	font-size:1em;
+	font-weight:normal
+	text-shadow: none;
 	margin-bottom:10px;
 }
 
@@ -55,11 +58,14 @@
 	padding:5px;
 	border:3px solid #3C68BD;
 	outline-color:-moz-use-text-color;
-	font-family: georgia;
+	font-family: Helvetica;
+	text-shadow: none;
 	font-size:1em;
+	font-weight:normal
 	cursor:pointer;
 	color:#FFF;
 	text-transform:uppercase;
+	text-shadow: none;
 	font-weight:bolder;
 	font-family:Helvetica;
 	margin-top:10px;
@@ -68,6 +74,8 @@
 #contactable form#contactForm p {
 	width:325px;
 	font-size:0.9em;
+	font-weight:normal
+	text-shadow: none;
 }
 
 #contactable form#contactForm .disclaimer {
@@ -75,7 +83,7 @@
 }
 
 #contactable #contactForm .red {
-	color:	#F5410F;
+	color:	#548CE6;
 }
 
 #contactable #overlay {
@@ -98,6 +106,7 @@
 
 #contactable form#contactForm label{
 	*margin-left:20px;
+	text-shadow: none;
 }
 
 #contactable form#contactForm #loading {
@@ -109,8 +118,10 @@
 }
 
 #contactable #callback {
-	font-family: georgia;
+	font-family: Helvetica;
 	font-size:1.1em;
+	font-weight:normal
+	text-shadow: none;
 	color: #FFF;
 	width:325px;
 	margin: 100px auto;	

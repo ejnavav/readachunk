@@ -1,4 +1,4 @@
-s#!/bin/bash
+#!/bin/bash
 
 # this is the cron line goes in cron tab
 # /bin/bash /home/readachunk/readachunk.com/cron.sh

@@ -15,7 +15,4 @@ puts `curl -F "book=@20-pages.pdf;type=application/pdf" -F "email=#{email}" -F "
   puts "scheduller: #{i}"
   puts `curl http://#{host}/scheduler.php`
   sleep(1)
-end  
-
-
-
+end

@@ -8,6 +8,7 @@ function schedule(){
     $jobs = $db['jobs'];
 
     foreach($jobs as $id => $job){
+		echo "checking to run job: $id\n";
         if(do_your_thing($id, $job)){
             $jobs[$id]['last_page_sent'] += $job['pages'];
             $jobs[$id]['last_time_sent'] = time();
@@ -21,10 +22,7 @@ function do_your_thing($id, $job){
     if( $job['confirmed'] != "true" ){ return false; }
     
     if( !time_to_send($job['last_time_sent'], $job['frequency'])) { return false; }
-	
-	$paused = isset($job['paused'])?$job['paused']:"false";
-	if ($paused = "true") {return false;}
-	
+
     $file_path = UPLOADFOLDERPATH.$job["file_id"];
     
     $chunk = get_chunk($file_path, $job['last_page_sent'], $job['pages']);
@@ -51,8 +49,9 @@ function get_chunk($file_path, $page_from, $pages){
     return array("path" => trim($chunk[0]), "done" => isset($chunk[1]));
 }
 
+// TODO pass time, to simulate pass of time when testing
 function time_to_send($last_time_sent, $freq){
-    $unit = 60;
+    $unit = 3600 * 24;
     if( $last_time_sent + ($freq * $unit) < time() ) {
         return true;
     }
