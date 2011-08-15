@@ -6,9 +6,9 @@ include("emailview.php");
 function schedule(){
     $db = db::load();
     $jobs = $db['jobs'];
-
+	
+	// FIXME try catch here
     foreach($jobs as $id => $job){
-		echo "checking to run job: $id\n";
         if(do_your_thing($id, $job)){
             $jobs[$id]['last_page_sent'] += $job['pages'];
             $jobs[$id]['last_time_sent'] = time();
@@ -16,6 +16,7 @@ function schedule(){
     }
     $db['jobs'] =  $jobs;
     db::save($db);
+	echo "DONE";
 }
 
 function do_your_thing($id, $job){
