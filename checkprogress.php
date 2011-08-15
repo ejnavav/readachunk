@@ -15,7 +15,7 @@ function check_progress($record_id){
 		$progress = 100*$last_page_read/$total_pages;
 		return $progress;
 	} catch (Exception $e) {
-		echo($e);
+		// echo($e);
 		$message = 'ERROR in readachunk.com\n\n'.$e->toString();
 		send_mail(array(ADMIN_EMAIL), "ERROR in readachunk.com", $message);
 	}
