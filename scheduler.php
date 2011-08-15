@@ -59,12 +59,21 @@ function get_chunk($file_path, $page_from, $pages){
 // TODO pass time, to simulate pass of time when testing
 function time_to_send($last_time_sent, $freq){
 	$unit = 3600 * 24;
-	if( $last_time_sent + ($freq * $unit) < time() ) {
-		return true;
-	}
-	else{
-		return false;
-	}
+	$target = $last_time_sent + ($freq * $unit);
+	return (time() > $target);
+}
+
+function test_time_to_send(){
+	$unit = 3600 * 24;
+	$freq = 3;
+	// should be no
+	$last_time_sent = (time() - ($unit * $freq) + 1);
+	echo time_to_send($last_time_sent, $freq) ? "yes" : "no"; echo "\n";
+
+	// should be yes
+	$last_time_sent = (time() - ($unit * $freq) - 1);
+	echo time_to_send($last_time_sent, $freq) ? "yes" : "no"; echo "\n";
 }
 
 schedule();
+// test_time_to_send();

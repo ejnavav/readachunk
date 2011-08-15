@@ -46,8 +46,8 @@ function save_job($job, $file_id){
 		$job['email'] = $email;
 		$job['file_id'] = $file_id;
 		$job['confirmed'] = "false";
-		$job['last_page_sent'] = "0";
-		$job['last_page_sent'] = "0";
+		$job['last_page_sent'] = 0;
+		$job['last_time_sent'] = 0;
 		$job['paused'] = "false";
 		$db['jobs'][$record_id]=$job;
 		$body = get_confirm_email($record_id);
