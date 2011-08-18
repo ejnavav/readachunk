@@ -5,7 +5,7 @@
 
 define ("UPLOADFOLDERPATH", "uploads/");
 define ("TEMP_PATH", "temp/");
-define ('ADMIN_EMAIL', 'victornavav@gmail.com');
+define ('ADMIN_EMAIL', 'readachunk@kjer.info');
 
 require_once('fileuploader.php');
 require_once('pdf_chunker.php');
