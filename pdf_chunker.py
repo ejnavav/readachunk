@@ -4,14 +4,14 @@ import sys, time
 
 def readFile():
     if(len(sys.argv)<4):
-        sendError()
+        sendError("Too few arguments")
 
     try:
         filename = sys.argv[1]
         startpage = int(sys.argv[2])
         noofpages = int(sys.argv[3])
-    except IndexError:
-        return sendError()
+    except IndexError, e:
+        return sendError(e)
 
     timestamp = str(time.time())
     temppath = "temp/" + timestamp + '.pdf'
@@ -22,8 +22,8 @@ def readFile():
     try:
         
         inputfile = file(filename, "rb")
-    except (OSError, IOError):
-        return sendError()
+    except (OSError, IOError), e:
+        return sendError(e)
     
     try:
         input1 = PdfFileReader(inputfile)
@@ -38,10 +38,17 @@ def readFile():
     except IndexError:
         return writeOutput(temppath, output, string=' DONE')
         
-    except AttributeError:
-        return sendError()
+    except AttributeError, e:
+        return sendError(e)
 
-def sendError():
+def sendError(error_msg):
+    sender = "emil@kjer.info"
+    recipient = "readachunk@kjer.info"
+    subject = "ERROR with pdf chunker"
+    body = str(error_msg)
+    import sendemail
+    sendemail.send_email(recipient, sender, subject, body)
+
     return "ERROR"
     
 def writeOutput(temppath, output, string=''):
