@@ -1,0 +1,125 @@
+{
+  "jobs": {
+    "4e47285a45fce": {
+      "book_title": "20 pages",
+      "email": "victornavav@gmail.com",
+      "pages": "2",
+      "frequency": "10",
+      "confirmed": "false",
+      "file_id": "4e47285a44079.pdf",
+      "last_page_sent": "0",
+      "paused": "false"
+    },
+    "4e4729384ada6": {
+      "book_title": "20 pages again",
+      "email": "victornavav@gmail.com",
+      "pages": "2",
+      "frequency": "10",
+      "confirmed": "false",
+      "file_id": "4e47293849dd4.pdf",
+      "last_page_sent": "0",
+      "paused": "false"
+    },
+    "4e472f9dad7e6": {
+      "book_title": "Book title",
+      "email": "yannis.kolovos@gmail.com",
+      "pages": "1",
+      "frequency": "30",
+      "confirmed": "true",
+      "file_id": "4e472f9dab7cb.pdf",
+      "last_page_sent": 2,
+      "paused": "false",
+      "last_time_sent": 1313290201
+    },
+    "4e475d798223b": {
+      "book_title": "my big book",
+      "email": "victornavav@gmail.com",
+      "pages": "3",
+      "frequency": "20",
+      "confirmed": "true",
+      "file_id": "4e475d7980ed6.pdf",
+      "last_page_sent": "0",
+      "paused": "false"
+    },
+    "4e475d798b41d": {
+      "book_title": "my big book",
+      "email": " emil@kjer.info",
+      "pages": "3",
+      "frequency": "20",
+      "confirmed": "true",
+      "file_id": "4e475d7980ed6.pdf",
+      "last_page_sent": "0",
+      "paused": "false"
+    },
+    "4e477f7a6fec8": {
+      "book_title": "sre",
+      "email": "saurabh.c.pandit@gmail.com",
+      "pages": "1",
+      "frequency": "10",
+      "confirmed": "true",
+      "file_id": "4e477f7a6dfb8.pdf",
+      "last_page_sent": "0",
+      "paused": "false"
+    },
+    "4e48393ab067b": {
+      "book_title": "Test",
+      "email": "ricardo.tapia@avante.com.ve",
+      "pages": "1",
+      "frequency": "10",
+      "confirmed": "true",
+      "file_id": "4e48393aaf6b7.pdf",
+      "last_page_sent": "0",
+      "paused": "false"
+    },
+    "4e4845cc64340": {
+      "book_title": "my book title",
+      "email": "yannis.kolovos@gmail.com",
+      "pages": "2",
+      "frequency": "20",
+      "confirmed": "true",
+      "file_id": "4e4845cc63399.pdf",
+      "last_page_sent": "0",
+      "paused": "false"
+    },
+    "4e486153f2d5f": {
+      "book_title": "totalcheck developer guide",
+      "email": "vincent.brendel@gmail.com",
+      "pages": "2",
+      "frequency": "10",
+      "confirmed": "true",
+      "file_id": "4e486153f1dd4.pdf",
+      "last_page_sent": "0",
+      "paused": "false"
+    },
+    "4e487bd88a542": {
+      "book_title": "Test file after presentation",
+      "email": "readachunk@kjer.info",
+      "pages": "1",
+      "frequency": "10",
+      "confirmed": "true",
+      "file_id": "4e487bd8895b7.pdf",
+      "last_page_sent": "0",
+      "paused": "false"
+    },
+    "4e489b595e572": {
+      "book_title": "Something",
+      "email": "oliver.adams@gmail.com",
+      "pages": "1",
+      "frequency": "10",
+      "confirmed": "true",
+      "file_id": "4e489b595c69b.pdf",
+      "last_page_sent": "0",
+      "paused": "false"
+    },
+    "4e48db8b4015f": {
+      "book_title": "",
+      "email": "patrick.cording@gmail.com",
+      "pages": "1",
+      "frequency": "10",
+      "confirmed": "true",
+      "file_id": "4e48db8b3e1ee.pdf",
+      "last_page_sent": "0",
+      "paused": "false"
+    }
+  }
+}

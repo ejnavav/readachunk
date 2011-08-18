@@ -6,7 +6,8 @@ include("emailview.php");
 function schedule(){
     $db = db::load();
     $jobs = $db['jobs'];
-
+	
+	// FIXME try catch here
     foreach($jobs as $id => $job){
         if(do_your_thing($id, $job)){
             $jobs[$id]['last_page_sent'] += $job['pages'];
@@ -15,6 +16,7 @@ function schedule(){
     }
     $db['jobs'] =  $jobs;
     db::save($db);
+	echo "DONE";
 }
 
 function do_your_thing($id, $job){
@@ -48,8 +50,9 @@ function get_chunk($file_path, $page_from, $pages){
     return array("path" => trim($chunk[0]), "done" => isset($chunk[1]));
 }
 
+// TODO pass time, to simulate pass of time when testing
 function time_to_send($last_time_sent, $freq){
-    $unit = 60;
+    $unit = 3600 * 24;
     if( $last_time_sent + ($freq * $unit) < time() ) {
         return true;
     }
