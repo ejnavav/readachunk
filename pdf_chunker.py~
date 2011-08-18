@@ -6,12 +6,10 @@ def readFile():
     if(len(sys.argv)<4):
         sendError()
 
-    try:
-        filename = sys.argv[1]
-        startpage = int(sys.argv[2])
-        noofpages = int(sys.argv[3])
-    except IndexError:
-        return sendError()
+
+    filename = sys.argv[1]
+    startpage = int(sys.argv[2])
+    noofpages = int(sys.argv[3])
 
     timestamp = str(time.time())
     temppath = "temp/" + timestamp + '.pdf'
@@ -23,7 +21,7 @@ def readFile():
         
         inputfile = file(filename, "rb")
     except (OSError, IOError):
-        return sendError()
+        sendError()
     
     try:
         input1 = PdfFileReader(inputfile)
@@ -39,7 +37,7 @@ def readFile():
         return writeOutput(temppath, output, string=' DONE')
         
     except AttributeError:
-        return sendError()
+        sendError()
 
 def sendError():
     return "ERROR"
