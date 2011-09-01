@@ -4,7 +4,7 @@ import sys, time
 
 def readFile():
     if(len(sys.argv)<4):
-        return sendError("Too few arguments")
+        return sendError("Too few arguments: " + str(sys.argv))
 
 
     try:
