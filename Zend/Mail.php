@@ -969,9 +969,9 @@ class Zend_Mail extends Zend_Mime_Message
     {
         if ($this->_date === null) {
             if ($date === null) {
-                $date = date('r');
+                $date = @date('r'); //Hack by Emil Kjer
             } else if (is_int($date)) {
-                $date = date('r', $date);
+                $date = @date('r', $date);
             } else if (is_string($date)) {
                 $date = strtotime($date);
                 if ($date === false || $date < 0) {
@@ -982,7 +982,7 @@ class Zend_Mail extends Zend_Mime_Message
                     throw new Zend_Mail_Exception('String representations of Date Header must be ' .
                                                   'strtotime()-compatible');
                 }
-                $date = date('r', $date);
+                $date = @date('r', $date);
             } else if ($date instanceof Zend_Date) {
                 $date = $date->get(Zend_Date::RFC_2822);
             } else {
